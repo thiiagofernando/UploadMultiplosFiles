@@ -1,0 +1,25 @@
+﻿@model UploadMultiplosFiles.Models.Files
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>File Upload</h2>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype="multipart/form-data" }))
+{
+    <div class="well">
+        <table class="table table-striped">
+            <tr>
+                <td>Arquivo:</td>
+                <td><input type="file" id="Arquivo" name="Arquivo" multiple/></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" name="submit" value="Enviar" class="btn btn-success"/></td>
+            </tr>
+            <tr>
+                <td>@ViewBag.Mensagem</td>
+            </tr>
+        </table>
+    </div>
+}
+

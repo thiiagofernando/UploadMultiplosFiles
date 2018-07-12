@@ -26,7 +26,8 @@ namespace UploadMultiplosFiles.Controllers
                     {
                         nomeArquivo = Path.GetFileName(arquivo.FileName);
                         //string[] caminho = Directory.GetFiles((@"C:\arquivos\"), nomeArquivo);
-                        var caminho = Path.Combine(Server.MapPath("~/Imagens"), rnd.Next().ToString() + "-"+nomeArquivo);
+                        //var caminho = Path.Combine(Server.MapPath("~/Imagens"), rnd.Next().ToString() + "-"+nomeArquivo);
+                        var caminho = Path.Combine(Server.MapPath("~/Imagens"),nomeArquivo);
                         arquivo.SaveAs(caminho.ToString());
                     }
                     ArquivoEnviado = ArquivoEnviado + " , " + nomeArquivo;
